@@ -207,6 +207,45 @@ Konacha.configure do |config|
 end if defined?(Konacha)
 ```
 
+Configuration options include:
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><code>driver</code></th>
+      <td><code>:selenium</code></td>
+      <td>Names a Capybara driver used for the <code>run</code> task</td>
+    </tr>
+    <tr>
+      <th><code>extra_asset_paths</code></th>
+      <td></td>
+      <td>Adds asset paths when running the Konacha server. For example, try <code>%w(public/assets)</code> to make Konacha work with <a href="https://github.com/markbates/coffee-rails-source-maps">CoffeeScript Rails Source Maps</a>.</td>
+    </tr>
+    <tr>
+      <th><code>spec_dir</code></th>
+      <td><code>spec/javascripts</code></td>
+      <td>Tells Konacha where to find Javascript specs.</td>
+    </tr>
+    <tr>
+      <th><code>spec_matcher</code></th>
+      <td><code>/_spec\.|_test\./</code></td>
+      <td>An object responding to <code>===</code> (most likely a <code>Regexp</code>); it receives a filename and should return true if the file is a spec.</td>
+    </tr>
+    <tr>
+      <th><code>stylesheets</code></th>
+      <td><code>%w(application)</code></td>
+      <td>Sets the stylesheets to be linked from the <code>&lt;head&gt;</code> of the test runner iframe.</td>
+    </tr>
+  </tbody>
+</table>
+
 ## Test Interface and Assertions
 
 Konacha includes a vendored copy of mocha.js and the [chai](http://chaijs.com/)
